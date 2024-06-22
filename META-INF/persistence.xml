@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="w3.org/2001/XMLSchema-instance" xsi:schemaLocation="xmlns.jcp.org/xml/ns/persistence xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+	<persistence-unit name="ProyectoMavenSabadoJPA">
+
+	   <!-- se vinculan las entidades que tenemos
+
+	   en el paquete model... -->
+
+		<class>model.TblCliente</class>
+		<class>model.TblUsuario</class>
+		<class>model.TblProducto</class>
+		<class>model.TblTipoproducto</class>
+		<!-- mysql -->
+		<properties>
+		<property name="javax.persistence.jdbc.url.driver" value="com.mysql.jdbc.Driver"/>
+		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bdjpasabado2024"/>
+		<property name="javax.persistence.jdbc.user" value="root"/>
+		<property name="javax.persistence.jdbc.password" value=""/>
+		<property name="javax.persistence.schema-generation.database.action" value="update"/>
+		</properties><!-- fin de properties -->
+	</persistence-unit>
+</persistence>
