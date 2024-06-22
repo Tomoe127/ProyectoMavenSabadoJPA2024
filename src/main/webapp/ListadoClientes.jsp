@@ -1,3 +1,5 @@
+<%@page import="model.TblCliente"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
@@ -23,10 +25,30 @@
 	<td>Telf</td>
 	<td>Sexo</td>
 	<td>Nacionalidad</td>
-	
 </tr>
-	
-</table>
 
+
+<%
+	List<TblCliente> listadocliente = (List<TblCliente>)request.getAttribute("listadodeproductos");
+	if(listadocliente!=null){
+		for(TblCliente lis:listadocliente){
+			%>
+			<tr>
+				<td><%=lis.getIdcliente() %></td>
+				<td><%=lis.getNombre() %></td>
+				<td><%=lis.getApellido() %></td>
+				<td><%=lis.getDni() %></td>
+				<td><%=lis.getTelf() %></td>
+				<td><%=lis.getSexo() %></td>
+				<td><%=lis.getNacionalidad() %></td>
+			</tr>
+			
+			<%
+			}
+			%>
+		<%
+	}
+%>
+</table>0
 </body>
 </html>
